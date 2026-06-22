@@ -1,0 +1,111 @@
+.services-section { background: var(--bg-primary); }
+
+.services-orb-1 {
+  width: 400px; height: 400px;
+  background: var(--color-warning);
+  bottom: -100px; right: 100px;
+  opacity: 0.08;
+}
+.services-orb-2 {
+  width: 350px; height: 350px;
+  background: var(--color-secondary);
+  top: 50px; left: -100px;
+  opacity: 0.08;
+}
+
+/* Service Card */
+.service-card {
+  padding: 30px 26px 24px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px var(--glass-shadow);
+}
+
+.service-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--glass-border);
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.service-icon-wrap {
+  width: 60px; height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.service-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.service-features li {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.service-features li i { font-size: 1.1rem; margin-right: 4px; }
+
+.service-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.service-card:hover .service-bottom-bar { opacity: 1; }
+
+/* CTA */
+.services-cta {
+  padding: 40px 44px;
+  border-radius: 20px;
+}
+.services-cta h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.services-cta p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 576px) {
+  .services-cta { padding: 28px 20px; }
+}

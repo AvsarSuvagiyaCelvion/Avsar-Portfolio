@@ -1,0 +1,5 @@
+.app-wrapper {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  transition: background-color 0.35s ease;
+}

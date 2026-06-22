@@ -1,0 +1,160 @@
+/* ─── CSS Custom Properties ─────────────────────────────── */
+:root {
+  --bg-primary: #0d0d1a;
+  --bg-secondary: #12122b;
+  --bg-card: #1a1a35;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.4);
+  --color-primary: #6c63ff;
+  --color-secondary: #00d4ff;
+  --color-accent: #ff6b9d;
+  --color-warning: #ffd166;
+  --text-primary: #e8e8ff;
+  --text-secondary: #a0a0cc;
+  --text-muted: #666688;
+  --navbar-bg: rgba(13, 13, 26, 0.88);
+  --scrollbar-track: #12122b;
+  --scrollbar-thumb: #6c63ff;
+}
+
+[data-theme='light'] {
+  --bg-primary: #f0f2ff;
+  --bg-secondary: #e4e8ff;
+  --bg-card: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(108, 99, 255, 0.18);
+  --glass-shadow: rgba(108, 99, 255, 0.1);
+  --color-primary: #5a52e8;
+  --color-secondary: #0099cc;
+  --color-accent: #e8567a;
+  --color-warning: #d4900a;
+  --text-primary: #1a1a3e;
+  --text-secondary: #444466;
+  --text-muted: #888899;
+  --navbar-bg: rgba(240, 242, 255, 0.9);
+  --scrollbar-track: #e4e8ff;
+  --scrollbar-thumb: #5a52e8;
+}
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* ─── Glass Utility ─────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  border-radius: 16px;
+}
+
+/* ─── Gradient Text ─────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Scroll Reveal ─────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.revealed { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.revealed { opacity: 1; transform: translateX(0); }
+
+/* ─── Section Base ──────────────────────────────────────── */
+section { padding: 100px 0; position: relative; }
+
+/* ─── Orb ───────────────────────────────────────────────── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Buttons ───────────────────────────────────────────── */
+.btn-primary-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #fff !important;
+  border: none;
+  padding: 13px 34px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(108, 99, 255, 0.45);
+}
+
+.btn-outline-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--color-primary) !important;
+  border: 2px solid var(--color-primary);
+  padding: 11px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-outline-custom:hover {
+  background: var(--color-primary);
+  color: #fff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(108, 99, 255, 0.35);
+}
