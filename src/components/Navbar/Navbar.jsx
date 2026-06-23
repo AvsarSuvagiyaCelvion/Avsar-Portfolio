@@ -4,24 +4,23 @@ import { personalInfo } from '../../data/portfolioData';
 import './Navbar.css';
 
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Home',     href: '#home' },
+  { label: 'About',    href: '#about' },
+  { label: 'Skills',   href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Services', href: '#services' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact',  href: '#contact' },
 ];
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled]       = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen]       = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 50);
-
       const sections = navLinks.map(l => l.href.slice(1));
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
@@ -38,20 +37,20 @@ export default function Navbar() {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     setMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <nav className={`navbar-custom ${scrolled ? 'scrolled' : ''}`}>
       <div className="container d-flex align-items-center justify-content-between py-2">
+
         {/* Logo */}
-        <a
-          href="#home"
-          className="navbar-logo"
-          onClick={e => handleNavClick(e, '#home')}
-        >
-          <span className="gradient-text">Avsar</span>
+        <a href="#home" className="navbar-logo" onClick={e => handleNavClick(e, '#home')}>
+          <span className="logo-icon">
+            <i className="bi bi-code-slash"></i>
+          </span>
+          <span className="gradient-text logo-name">Avsar</span>
+          <span className="logo-dot">.</span>
         </a>
 
         {/* Desktop Links */}
@@ -69,25 +68,16 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right Controls */}
+        {/* Controls */}
         <div className="navbar-controls d-flex align-items-center gap-3">
-          <button
-            className="theme-toggle"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-          >
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
             <i className={`bi bi-${theme === 'dark' ? 'sun-fill' : 'moon-stars-fill'}`}></i>
           </button>
 
-          <a
-            href={personalInfo.resume}
-            className="btn-primary-custom d-none d-lg-inline-flex"
-            download
-          >
+          <a href={personalInfo.resume} className="btn-primary-custom d-none d-lg-inline-flex" download>
             <i className="bi bi-download"></i> Resume
           </a>
 
-          {/* Hamburger */}
           <button
             className={`hamburger d-lg-none ${menuOpen ? 'open' : ''}`}
             onClick={() => setMenuOpen(p => !p)}

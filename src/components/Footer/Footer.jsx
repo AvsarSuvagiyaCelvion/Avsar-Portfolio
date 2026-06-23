@@ -2,19 +2,16 @@ import { personalInfo } from '../../data/portfolioData';
 import './Footer.css';
 
 const footerLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Home',     href: '#home' },
+  { label: 'About',    href: '#about' },
+  { label: 'Skills',   href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Services', href: '#services' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact',  href: '#contact' },
 ];
 
 export default function Footer() {
-  const scrollTo = (href) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
+  const scrollTo = href => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
@@ -22,11 +19,16 @@ export default function Footer() {
       <div className="footer-top">
         <div className="container">
           <div className="row g-5">
+
             {/* Brand */}
             <div className="col-lg-4">
               <div className="footer-brand">
                 <span className="footer-logo">
+                  <span className="footer-logo-icon">
+                    <i className="bi bi-code-slash"></i>
+                  </span>
                   <span className="gradient-text">Avsar</span>
+                  <span className="footer-logo-dot">.</span>
                 </span>
                 <p className="footer-tagline">
                   Building modern, scalable web experiences with clean code and creative design.
@@ -80,7 +82,10 @@ export default function Footer() {
                 </li>
               </ul>
 
-             
+              <div className="avail-badge mt-3">
+                <span className="avail-dot"></span>
+                Available for new projects
+              </div>
             </div>
           </div>
         </div>
@@ -90,8 +95,9 @@ export default function Footer() {
         <div className="container">
           <div className="footer-bottom-inner">
             <p>
-              &copy; {new Date().getFullYear()} <span className="gradient-text">Avsar Dev</span>.
-              Built with <i className="bi bi-heart-fill" style={{ color: '#ff6b9d' }}></i> using React &amp; Bootstrap.
+              &copy; {new Date().getFullYear()}{' '}
+              <span className="gradient-text">Avsar Dev</span>.
+              Built with <i className="bi bi-heart-fill" style={{ color: '#ff6b9d', fontSize: '0.75rem' }}></i> using React &amp; Bootstrap.
             </p>
             <button className="scroll-top-btn" onClick={scrollTop} aria-label="Back to top">
               <i className="bi bi-arrow-up"></i>

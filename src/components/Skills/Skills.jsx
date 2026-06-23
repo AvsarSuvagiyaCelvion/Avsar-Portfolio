@@ -66,7 +66,7 @@ export default function Skills() {
           <div className="row g-3">
             {[
               { name: 'React / Frontend', pct: 92, color: '#6c63ff' },
-              { name: 'Node.js / Backend', pct: 85, color: '#00d4ff' },
+              { name: 'Node.js / Backend', pct: 70, color: '#00d4ff' },
               { name: 'PHP & MySQL', pct: 80, color: '#ff6b9d' },
               { name: 'Shopify / E-commerce', pct: 88, color: '#ffd166' },
             ].map(bar => (

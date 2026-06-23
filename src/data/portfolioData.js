@@ -1,10 +1,10 @@
 export const personalInfo = {
-  name: 'Avsar Dev',
+  name: 'Avsar Suvagiya',
   title: 'Full Stack Developer',
   subtitle: 'Building modern web experiences with clean code & creative design',
-  email: 'hello@avsardev.com',
-  phone: '+1 (555) 123-4567',
-  location: 'San Francisco, CA',
+  email: 'avsarsuvagiya968@gmail.com',
+  phone: '+91 8320653782',
+  location: 'Surat , Gujrat , India',
   bio: `I'm a passionate Full Stack Developer with 5+ years of experience crafting scalable,
   user-centric web applications. I specialize in React, Node.js, PHP, and modern e-commerce
   platforms including Shopify. I love turning complex problems into elegant, performant solutions
@@ -19,7 +19,7 @@ export const personalInfo = {
     twitter: 'https://twitter.com',
     instagram: 'https://instagram.com',
   },
-  resume: '#',
+  resume: '',
 };
 
 export const skills = [
@@ -45,7 +45,7 @@ export const skills = [
     category: 'DevOps & Tools',
     icon: 'bi-gear-wide-connected',
     color: '#ffd166',
-    items: ['Git & GitHub', 'Vercel', 'Netlify', 'Docker (basics)', 'Vite', 'Webpack', 'VS Code'],
+    items: ['Git & GitHub', 'Vercel', 'VS Code'],
   },
 ];
 
@@ -91,7 +91,7 @@ export const projects = [
     title: 'Financial Tracker App',
     description:
       'A personal finance management application with income/expense tracking, budget goals, visual charts, export to CSV, and multi-currency support.',
-    tags: ['React', 'Node.js', 'Chart.js'],
+    tags: ['React', 'Bootstrap'],
     icon: 'bi-graph-up-arrow',
     gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
     github: 'https://github.com',

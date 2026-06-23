@@ -1,108 +1,93 @@
 .about-section { background: var(--bg-secondary); }
 
 .about-orb-1 {
-  width: 450px; height: 450px;
+  width: 500px; height: 500px;
   background: var(--color-secondary);
   top: -100px; right: -100px;
+  opacity: 0.12;
+}
+.about-orb-2 {
+  width: 350px; height: 350px;
+  background: var(--color-primary);
+  bottom: 0; left: -80px;
+  opacity: 0.1;
 }
 
-/* Visual side */
-.about-visual { position: relative; }
-
-.about-img-frame {
-  position: relative;
-  overflow: hidden;
+/* Bio card */
+.about-bio-card {
+  padding: 36px 32px;
   border-radius: 20px;
-  aspect-ratio: 4/5;
-  max-width: 340px;
-  margin: 0 auto;
-}
-.about-avatar-svg { width: 100%; height: 100%; }
-
-.exp-badge {
-  position: absolute;
-  bottom: 20px;
-  right: -20px;
-  padding: 14px 20px;
-  text-align: center;
-  border-radius: 16px;
-}
-.exp-badge strong {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-}
-.exp-badge span {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-weight: 500;
+  height: 100%;
 }
 
-/* Highlight cards */
-.about-highlights {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 16px;
-  max-width: 340px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.highlight-card {
-  padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border-radius: 12px;
-}
-.highlight-card i { font-size: 1.4rem; }
-.highlight-card strong {
-  display: block;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1;
-}
-.highlight-card span {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-top: 2px;
-  display: block;
-}
-
-/* Content side */
 .about-greeting {
-  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
   font-weight: 800;
   margin-bottom: 1.25rem;
   color: var(--text-primary);
-}
-.about-bio {
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-  font-size: 0.97rem;
-  line-height: 1.8;
+  line-height: 1.3;
 }
 
-/* Info grid */
-.about-info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin: 1.5rem 0;
+.about-bio {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin-bottom: 1rem;
 }
+
+/* Socials */
+.about-socials { display: flex; gap: 10px; }
+.social-btn {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  transition: all 0.25s ease;
+}
+.social-btn:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.35);
+}
+
+/* Info card */
+.about-info-card {
+  padding: 30px 26px;
+  border-radius: 20px;
+}
+
+.info-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.about-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .info-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
+
 .info-icon {
-  width: 38px; height: 38px;
+  width: 40px; height: 40px;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 10px;
@@ -113,9 +98,10 @@
   font-size: 1rem;
   flex-shrink: 0;
 }
+
 .info-row small {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -126,33 +112,72 @@
   font-size: 0.88rem;
   color: var(--text-primary);
   font-weight: 600;
-  margin-top: 1px;
+  margin-top: 2px;
+  word-break: break-all;
 }
 
-/* Socials */
-.about-socials { display: flex; gap: 10px; }
-.social-btn {
-  width: 42px; height: 42px;
-  border-radius: 12px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+/* Availability */
+.avail-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 50px;
+  padding: 7px 16px;
+}
+.avail-dot {
+  width: 7px; height: 7px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse-avail 2s infinite;
+}
+@keyframes pulse-avail {
+  0%, 100% { box-shadow: 0 0 0 2px rgba(34,197,94,0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
+
+/* Highlight cards */
+.highlight-card {
+  padding: 20px 18px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px var(--glass-shadow);
+}
+.highlight-icon {
+  width: 48px; height: 48px;
+  border-radius: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  transition: all 0.25s ease;
-  backdrop-filter: blur(8px);
+  font-size: 1.3rem;
+  flex-shrink: 0;
 }
-.social-btn:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.35);
+.highlight-card strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.highlight-card span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+  font-weight: 500;
 }
 
 @media (max-width: 576px) {
-  .about-info-grid { grid-template-columns: 1fr; }
-  .exp-badge { right: 10px; }
+  .about-bio-card { padding: 24px 18px; }
+  .about-info-card { padding: 22px 16px; }
 }
