@@ -50,7 +50,6 @@ export default function Navbar() {
             <i className="bi bi-code-slash"></i>
           </span>
           <span className="gradient-text logo-name">Avsar</span>
-          <span className="logo-dot">.</span>
         </a>
 
         {/* Desktop Links */}
