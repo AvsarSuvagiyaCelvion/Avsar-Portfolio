@@ -96,8 +96,8 @@ export default function Footer() {
           <div className="footer-bottom-inner">
             <p>
               &copy; {new Date().getFullYear()}{' '}
-              <span className="gradient-text">Avsar Dev</span>.
-              Built with <i className="bi bi-heart-fill" style={{ color: '#ff6b9d', fontSize: '0.75rem' }}></i> using React &amp; Bootstrap.
+              <span className="gradient-text">Avsar</span>&nbsp;
+               Built with <i className="bi bi-heart-fill" style={{ color: '#ff6b9d', fontSize: '0.75rem' }}></i> using React &amp; Bootstrap.
             </p>
             <button className="scroll-top-btn" onClick={scrollTop} aria-label="Back to top">
               <i className="bi bi-arrow-up"></i>
