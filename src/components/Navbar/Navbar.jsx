@@ -46,9 +46,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="#home" className="navbar-logo" onClick={e => handleNavClick(e, '#home')}>
-          <span className="logo-icon">
-            <i className="bi bi-code-slash"></i>
-          </span>
+          
           <span className="gradient-text logo-name">Avsar</span>
         </a>
 
