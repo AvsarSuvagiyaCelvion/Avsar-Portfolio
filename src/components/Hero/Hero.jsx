@@ -28,10 +28,10 @@ export default function Hero() {
 
             {/* Availability badge */}
             <motion.div {...fadeUp(0.1)} className="d-flex justify-content-center mb-4">
-              {/* <span className="hero-badge">
+              <span className="hero-badge">
                 <span className="badge-dot"></span>
                 Available for freelance &amp; full-time roles
-              </span> */}
+              </span>
             </motion.div>
 
             {/* Title */}
