@@ -82,10 +82,10 @@ export default function Footer() {
                 </li>
               </ul>
 
-              <div className="avail-badge mt-3">
+              {/* <div className="avail-badge mt-3">
                 <span className="avail-dot"></span>
                 Available for new projects
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -71,7 +71,7 @@ export default function Navbar() {
             <i className={`bi bi-${theme === 'dark' ? 'sun-fill' : 'moon-stars-fill'}`}></i>
           </button>
 
-          <a href={personalInfo.resume} className="btn-primary-custom d-none d-lg-inline-flex" download>
+          <a href="./resume.pdf" className="btn-primary-custom d-none d-lg-inline-flex" download>
             <i className="bi bi-download"></i> Resume
           </a>
 

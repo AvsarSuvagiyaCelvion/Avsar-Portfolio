@@ -67,22 +67,20 @@ export default function Projects() {
 
                 {/* Links */}
                 <div className="project-links mt-4">
-                  <a
-                    href={project.live}
-                    className="btn-primary-custom"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="bi bi-box-arrow-up-right"></i> Live Demo
-                  </a>
-                  <a
-                    href={project.github}
-                    className="btn-outline-custom"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="bi bi-github"></i> Code
-                  </a>
+                  {project.live && project.live !== '#' ? (
+                    <a
+                      href={project.live}
+                      className="btn-primary-custom"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className="bi bi-box-arrow-up-right"></i> Live Demo
+                    </a>
+                  ) : (
+                    <span className="btn-primary-custom" style={{ opacity: 0.4, cursor: 'not-allowed' }}>
+                      <i className="bi bi-box-arrow-up-right"></i> Coming Soon
+                    </span>
+                  )}
                 </div>
               </div>
 

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { personalInfo } from '../../data/portfolioData';
 import './Hero.css';
 
@@ -15,6 +16,29 @@ export default function Hero() {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const fullName = personalInfo.name;
+  const [displayed, setDisplayed] = useState('');
+  const [index, setIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const speed = deleting ? 60 : 120;
+    const timeout = setTimeout(() => {
+      if (!deleting && index < fullName.length) {
+        setDisplayed(fullName.slice(0, index + 1));
+        setIndex(i => i + 1);
+      } else if (!deleting && index === fullName.length) {
+        setTimeout(() => setDeleting(true), 1800);
+      } else if (deleting && index > 0) {
+        setDisplayed(fullName.slice(0, index - 1));
+        setIndex(i => i - 1);
+      } else {
+        setDeleting(false);
+      }
+    }, speed);
+    return () => clearTimeout(timeout);
+  }, [index, deleting, fullName]);
+
   return (
     <section id="home" className="hero-section">
       <div className="orb hero-orb-1"></div>
@@ -27,17 +51,17 @@ export default function Hero() {
           <div className="col-lg-9 col-xl-8 text-center">
 
             {/* Availability badge */}
-            <motion.div {...fadeUp(0.1)} className="d-flex justify-content-center mb-4">
+            {/* <motion.div {...fadeUp(0.1)} className="d-flex justify-content-center mb-4">
               <span className="hero-badge">
                 <span className="badge-dot"></span>
                 Available for freelance &amp; full-time roles
               </span>
-            </motion.div>
+            </motion.div> */}
 
             {/* Title */}
             <motion.h1 {...fadeUp(0.25)} className="hero-title">
-              Hi, I'm{' '}
-              <span className="gradient-text">{personalInfo.name}</span>
+              Hi, I'm{' '} <br />
+              <span className="gradient-text typewriter-name">{displayed}<span className="tw-cursor">|</span></span>
               <br />
               <span className="hero-role">{personalInfo.title}</span>
             </motion.h1>
@@ -64,10 +88,14 @@ export default function Hero() {
                 <i className="bi bi-envelope-fill"></i>
                 Let's Talk
               </button>
+              <a className="btn-outline-custom" href="/resume.pdf" download="Avsar_Resume.pdf">
+                <i className="bi bi-download"></i>
+                Download Resume
+              </a>
             </motion.div>
 
             {/* Stats */}
-            <motion.div {...fadeUp(0.85)} className="hero-stats mt-5 justify-content-center">
+            {/* <motion.div {...fadeUp(0.85)} className="hero-stats mt-5 justify-content-center">
               {[
                 { value: '5+', label: 'Years Experience' },
                 { value: '40+', label: 'Projects Done' },
@@ -78,12 +106,12 @@ export default function Hero() {
                   <span>{stat.label}</span>
                 </div>
               ))}
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
@@ -91,7 +119,7 @@ export default function Hero() {
         >
           <div className="scroll-line"></div>
           <span>Scroll</span>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

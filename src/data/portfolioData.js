@@ -19,7 +19,7 @@ export const personalInfo = {
     twitter: 'https://twitter.com',
     instagram: 'https://instagram.com',
   },
-  resume: '',
+  resume: 'E:\\React\\Avsar_Portfolio1\\src\\assets\\Avsar_Suvagiya_Resume.pdf',
 };
 
 export const skills = [
@@ -50,27 +50,26 @@ export const skills = [
 ];
 
 export const projects = [
-  {
-    id: 1,
-    title: 'Restaurant Website',
-    description:
-      'A fully responsive restaurant website featuring an interactive menu, online reservation system, and gallery. Built with React and Node.js backend with real-time table availability.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Bootstrap'],
-    icon: 'bi-cup-hot-fill',
-    gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-    github: 'https://github.com',
-    live: '#',
-    features: ['Online Reservations', 'Dynamic Menu', 'Image Gallery', 'Admin Dashboard'],
-  },
+  // {
+  //   id: 1,
+  //   title: 'Restaurant Website',
+  //   description:
+  //     'A fully responsive restaurant website featuring an interactive menu, online reservation system, and gallery. Built with React and Node.js backend with real-time table availability.',
+  //   tags: ['React', 'Node.js', 'MongoDB', 'Bootstrap'],
+  //   icon: 'bi-cup-hot-fill',
+  //   gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+  //   github: 'https://github.com',
+  //   live: '#',
+  //   features: ['Online Reservations', 'Dynamic Menu', 'Image Gallery', 'Admin Dashboard'],
+  // },
   {
     id: 2,
     title: 'Electronics E-commerce',
     description:
       'A feature-rich electronics store with product filtering, cart management, Stripe payments, user authentication, and an admin panel for inventory management.',
-    tags: ['React', 'PHP', 'MySQL', 'Stripe API'],
+    tags: [, 'PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
     icon: 'bi-phone-fill',
-    gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-    github: 'https://github.com',
+    // gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     live: '#',
     features: ['Stripe Payments', 'Product Filtering', 'User Auth', 'Admin Panel'],
   },
@@ -81,8 +80,7 @@ export const projects = [
       'A full-featured social platform with real-time messaging, post feeds, friend connections, photo sharing, and notifications — built entirely in PHP with MySQL.',
     tags: ['PHP', 'MySQL', 'JavaScript', 'CSS3'],
     icon: 'bi-people-fill',
-    gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-    github: 'https://github.com',
+    // gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
     live: '#',
     features: ['Real-time Chat', 'Post Feed', 'Friend System', 'Notifications'],
   },
@@ -93,11 +91,28 @@ export const projects = [
       'A personal finance management application with income/expense tracking, budget goals, visual charts, export to CSV, and multi-currency support.',
     tags: ['React', 'Bootstrap'],
     icon: 'bi-graph-up-arrow',
-    gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-    github: 'https://github.com',
-    live: '#',
+    // gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+    live: 'https://personal-finance-tracker-nine-bay.vercel.app/',
     features: ['Budget Goals', 'Visual Charts', 'CSV Export', 'Multi-currency'],
   },
+  {
+  id: 5,
+  title: 'Luxury Perfume Store',
+  description:
+    'A modern Shopify-based eCommerce website for selling premium perfumes with a responsive design, secure checkout, product collections, customer reviews, and an optimized shopping experience.',
+  tags: ['Shopify', 'Liquid', 'HTML', 'CSS', 'JavaScript'],
+  icon: 'bi-shop',
+  // gradient: 'linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%)',
+  live: 'https://therimzimperfume.com',
+  features: [
+    'Responsive Design',
+    'Product Collections',
+    'Secure Checkout',
+    'Customer Reviews',
+    'Search & Filter',
+    'Mobile Friendly',
+  ],
+}
 ];
 
 export const services = [

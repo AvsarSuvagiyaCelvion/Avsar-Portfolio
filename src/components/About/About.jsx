@@ -63,7 +63,7 @@ export default function About() {
                 </div>
 
                 <div className="mt-4">
-                  <a href={personalInfo.resume} className="btn-primary-custom" download>
+                  <a href="./resume.pdf" className="btn-primary-custom" download>
                     <i className="bi bi-download"></i> Download Resume
                   </a>
                 </div>
@@ -89,10 +89,10 @@ export default function About() {
                 </div>
 
                 {/* Availability */}
-                <div className="avail-tag mt-4">
+                {/* <div className="avail-tag mt-4">
                   <span className="avail-dot"></span>
                   Currently available for new projects
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
