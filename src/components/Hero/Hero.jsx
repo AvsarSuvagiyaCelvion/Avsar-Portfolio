@@ -111,18 +111,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="scroll-indicator-wrap"
-          onClick={() => scrollTo('about')}
-        >
-          <div className="scroll-mouse-icon">
-            <span className="scroll-mouse-wheel"></span>
-          </div>
-          <span style={{ fontSize: '0.78rem', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Scroll</span>
-        </motion.div>
+        
       </div>
     </section>
   );

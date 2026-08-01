@@ -14,10 +14,9 @@ export const personalInfo = {
   the intersection of technical excellence and thoughtful design.`,
   avatar: null,
   socials: {
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
-    twitter: 'https://twitter.com',
-    instagram: 'https://instagram.com',
+    github: 'https://github.com/AvsarSuvagiyaCelvion',
+    linkedin: 'https://www.linkedin.com/in/avsar-suvagiya-859755343/',
+    instagram: 'https://www.instagram.com/avsar_.07',
   },
   resume: '/resume.pdf',
 };
