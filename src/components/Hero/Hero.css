@@ -117,7 +117,7 @@
   font-size: 0.83rem;
   font-weight: 500;
   backdrop-filter: blur(6px);
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .tech-tag:hover {
   border-color: var(--color-primary);

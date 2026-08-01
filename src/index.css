@@ -1,40 +1,40 @@
 /* ─── CSS Custom Properties ─────────────────────────────── */
 :root {
-  --bg-primary: #0d0d1a;
-  --bg-secondary: #12122b;
-  --bg-card: #1a1a35;
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: rgba(0, 0, 0, 0.4);
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #101016;
+  --bg-card: #161622;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-shadow: rgba(0, 0, 0, 0.5);
   --color-primary: #6c63ff;
   --color-secondary: #00d4ff;
   --color-accent: #ff6b9d;
   --color-warning: #ffd166;
-  --text-primary: #e8e8ff;
-  --text-secondary: #a0a0cc;
-  --text-muted: #666688;
-  --navbar-bg: rgba(13, 13, 26, 0.88);
-  --scrollbar-track: #12122b;
-  --scrollbar-thumb: #6c63ff;
+  --text-primary: #f4f4f7;
+  --text-secondary: #9fa0b2;
+  --text-muted: #626477;
+  --navbar-bg: rgba(10, 10, 15, 0.85);
+  --scrollbar-track: #101016;
+  --scrollbar-thumb: #3f3f46;
 }
 
 [data-theme='light'] {
-  --bg-primary: #f0f2ff;
-  --bg-secondary: #e4e8ff;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
   --bg-card: #ffffff;
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(108, 99, 255, 0.18);
-  --glass-shadow: rgba(108, 99, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-shadow: rgba(15, 23, 42, 0.04);
   --color-primary: #5a52e8;
   --color-secondary: #0099cc;
   --color-accent: #e8567a;
   --color-warning: #d4900a;
-  --text-primary: #1a1a3e;
-  --text-secondary: #444466;
-  --text-muted: #888899;
-  --navbar-bg: rgba(240, 242, 255, 0.9);
-  --scrollbar-track: #e4e8ff;
-  --scrollbar-thumb: #5a52e8;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --navbar-bg: rgba(248, 250, 252, 0.88);
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
 }
 
 /* ─── Reset ─────────────────────────────────────────────── */
@@ -105,14 +105,9 @@ img { max-width: 100%; display: block; }
 /* ─── Section Base ──────────────────────────────────────── */
 section { padding: 100px 0; position: relative; }
 
-/* ─── Orb ───────────────────────────────────────────────── */
+/* ─── Orb (Disabled globally for a clean, simple, and professional background) ─── */
 .orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: 0;
+  display: none !important;
 }
 
 /* ─── Buttons ───────────────────────────────────────────── */
@@ -128,13 +123,17 @@ section { padding: 100px 0; position: relative; }
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.3px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 .btn-primary-custom:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 35px rgba(108, 99, 255, 0.45);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(108, 99, 255, 0.35);
+  filter: brightness(1.05);
 }
 
 .btn-outline-custom {
@@ -148,13 +147,73 @@ section { padding: 100px 0; position: relative; }
   border-radius: 50px;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: all 0.25s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   text-decoration: none;
 }
 .btn-outline-custom:hover {
   background: var(--color-primary);
   color: #fff !important;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(108, 99, 255, 0.35);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(108, 99, 255, 0.25);
 }
+
+/* ─── Premium Keyframe Animations ──────────────────────── */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes scroll-mouse {
+  0% { opacity: 0; transform: translate(-50%, 0); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, 20px); }
+}
+
+/* Floating animation utilities */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Scroll down indicator icon styles */
+.scroll-indicator-wrap {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.scroll-mouse-icon {
+  width: 26px;
+  height: 42px;
+  border: 2px solid var(--text-secondary);
+  border-radius: 20px;
+  position: relative;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+.scroll-mouse-icon:hover {
+  opacity: 1;
+}
+.scroll-mouse-wheel {
+  display: block;
+  width: 4px;
+  height: 8px;
+  background: var(--color-secondary);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-mouse 2s infinite;
+}
+

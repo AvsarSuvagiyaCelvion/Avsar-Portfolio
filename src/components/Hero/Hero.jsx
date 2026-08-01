@@ -51,12 +51,12 @@ export default function Hero() {
           <div className="col-lg-9 col-xl-8 text-center">
 
             {/* Availability badge */}
-            {/* <motion.div {...fadeUp(0.1)} className="d-flex justify-content-center mb-4">
+            <motion.div {...fadeUp(0.1)} className="d-flex justify-content-center mb-4">
               <span className="hero-badge">
                 <span className="badge-dot"></span>
-                Available for freelance &amp; full-time roles
+                Available for freelance &amp; custom contract roles
               </span>
-            </motion.div> */}
+            </motion.div>
 
             {/* Title */}
             <motion.h1 {...fadeUp(0.25)} className="hero-title">
@@ -95,10 +95,10 @@ export default function Hero() {
             </motion.div>
 
             {/* Stats */}
-            {/* <motion.div {...fadeUp(0.85)} className="hero-stats mt-5 justify-content-center">
+            <motion.div {...fadeUp(0.85)} className="hero-stats mt-5 justify-content-center">
               {[
                 { value: '5+', label: 'Years Experience' },
-                { value: '40+', label: 'Projects Done' },
+                { value: '40+', label: 'Projects Completed' },
                 { value: '30+', label: 'Happy Clients' },
               ].map(stat => (
                 <div key={stat.label} className="hero-stat">
@@ -106,20 +106,23 @@ export default function Hero() {
                   <span>{stat.label}</span>
                 </div>
               ))}
-            </motion.div> */}
+            </motion.div>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="scroll-indicator"
+          className="scroll-indicator-wrap"
+          onClick={() => scrollTo('about')}
         >
-          <div className="scroll-line"></div>
-          <span>Scroll</span>
-        </motion.div> */}
+          <div className="scroll-mouse-icon">
+            <span className="scroll-mouse-wheel"></span>
+          </div>
+          <span style={{ fontSize: '0.78rem', letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Scroll</span>
+        </motion.div>
       </div>
     </section>
   );

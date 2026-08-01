@@ -4,12 +4,13 @@ import { personalInfo } from '../../data/portfolioData';
 import './Navbar.css';
 
 const navLinks = [
-  { label: 'Home',     href: '#home' },
-  { label: 'About',    href: '#about' },
-  { label: 'Skills',   href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Services', href: '#services' },
-  { label: 'Contact',  href: '#contact' },
+  { label: 'Home',         href: '#home' },
+  { label: 'About',        href: '#about' },
+  { label: 'Projects',     href: '#projects' },
+  { label: 'Services',     href: '#services' },
+  { label: 'Pricing',      href: '#pricing' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'Contact',      href: '#contact' },
 ];
 
 export default function Navbar() {

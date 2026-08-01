@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="row g-5">
 
             {/* Brand */}
-            <div className="col-lg-4">
+            <div className="col-md-6 col-lg-4">
               <div className="footer-brand">
                 <span className="footer-logo">
                   <span className="footer-logo-icon">
@@ -51,7 +51,7 @@ export default function Footer() {
             </div>
 
             {/* Quick Links */}
-            <div className="col-sm-6 col-lg-4">
+            <div className="col-6 col-md-3 col-lg-2">
               <h4 className="footer-col-title">Quick Links</h4>
               <ul className="footer-nav">
                 {footerLinks.map(link => (
@@ -65,7 +65,7 @@ export default function Footer() {
             </div>
 
             {/* Contact Info */}
-            <div className="col-sm-6 col-lg-4">
+            <div className="col-6 col-md-3 col-lg-3">
               <h4 className="footer-col-title">Contact Info</h4>
               <ul className="footer-contact-list">
                 <li>
@@ -81,11 +81,27 @@ export default function Footer() {
                   <span>{personalInfo.location}</span>
                 </li>
               </ul>
+            </div>
 
-              {/* <div className="avail-badge mt-3">
-                <span className="avail-dot"></span>
-                Available for new projects
-              </div> */}
+            {/* Newsletter Column */}
+            <div className="col-md-6 col-lg-3">
+              <h4 className="footer-col-title">Newsletter</h4>
+              <p className="footer-tagline mb-3" style={{ fontSize: '0.85rem' }}>
+                Subscribe to get the latest updates on tools, templates, and tech articles.
+              </p>
+              <form onSubmit={e => e.preventDefault()} className="newsletter-form">
+                <div className="position-relative">
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="newsletter-input input-custom"
+                    required
+                  />
+                  <button type="submit" className="newsletter-btn" aria-label="Subscribe">
+                    <i className="bi bi-arrow-right"></i>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

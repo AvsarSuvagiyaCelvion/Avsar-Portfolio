@@ -38,10 +38,16 @@
   gap: 14px;
   padding: 16px 18px;
   border-radius: 14px;
-  transition: transform 0.25s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
-.contact-card:hover { transform: translateX(6px); }
+.contact-card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 10px 25px var(--glass-shadow);
+  border-color: rgba(255, 255, 255, 0.15);
+}
 .contact-card-icon {
   width: 44px; height: 44px;
   border-radius: 12px;
@@ -114,7 +120,8 @@
   font-size: 0.92rem;
   color: var(--text-primary);
   outline: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   resize: none;
   font-family: inherit;
 }

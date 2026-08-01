@@ -15,11 +15,18 @@
 .skill-card {
   padding: 28px 24px;
   border-radius: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .skill-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(108, 99, 255, 0.2);
+  box-shadow: 0 20px 50px var(--glass-shadow);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='light'] .skill-card:hover {
+  border-color: rgba(108, 99, 255, 0.25);
 }
 
 .skill-icon-wrap {
@@ -67,6 +74,19 @@
 .prof-bar-wrap {
   padding: 18px 20px;
   border-radius: 14px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prof-bar-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px var(--glass-shadow);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+[data-theme='light'] .prof-bar-wrap:hover {
+  border-color: rgba(108, 99, 255, 0.2);
 }
 
 .prof-bar-header {
