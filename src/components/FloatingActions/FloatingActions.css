@@ -2,16 +2,17 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
+  width: 50px;
+  height: 50px;
   z-index: 1000;
-  pointer-events: none; /* Let container be click-through, but buttons capture events */
+  pointer-events: none;
 }
 
 .floating-btn {
   pointer-events: all;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -21,7 +22,9 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 
@@ -30,12 +33,17 @@
   background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
   color: #ffffff;
   font-size: 1.6rem;
-  position: relative;
+  z-index: 1002;
+  position: absolute;
 }
 
 .floating-btn.whatsapp:hover {
   transform: translateY(-4px) scale(1.08);
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+}
+
+.has-scroll .floating-btn.whatsapp {
+  bottom: 64px; /* 50px button + 14px gap */
 }
 
 /* WhatsApp Pulse Ring Animation */
@@ -73,15 +81,14 @@
   font-size: 1.25rem;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(20px) scale(0.85);
-  pointer-events: none;
+  transform: translateY(10px) scale(0.85);
+  z-index: 1001;
 }
 
 .floating-btn.scroll-top.visible {
   opacity: 1;
   visibility: visible;
   transform: translateY(0) scale(1);
-  pointer-events: all;
 }
 
 .floating-btn.scroll-top:hover {
@@ -94,7 +101,8 @@
   .floating-actions-container {
     bottom: 16px;
     right: 16px;
-    gap: 10px;
+    width: 44px;
+    height: 44px;
   }
 
   .floating-btn {
@@ -105,6 +113,10 @@
 
   .floating-btn.whatsapp {
     font-size: 1.4rem;
+  }
+
+  .has-scroll .floating-btn.whatsapp {
+    bottom: 54px; /* 44px button + 10px gap */
   }
 
   .floating-btn.scroll-top {

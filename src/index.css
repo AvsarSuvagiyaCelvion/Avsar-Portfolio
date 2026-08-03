@@ -50,6 +50,8 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -71,6 +73,7 @@ body {
   color: var(--text-primary);
   line-height: 1.7;
   overflow-x: hidden;
+  max-width: 100%;
   transition: background-color 0.35s ease, color 0.35s ease;
 }
 

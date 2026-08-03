@@ -30,16 +30,7 @@ export default function FloatingActions() {
   const whatsappUrl = `https://wa.me/${cleanPhoneNumber}`;
 
   return (
-    <div className="floating-actions-container">
-      {/* Scroll to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className={`floating-btn scroll-top ${showScrollTop ? 'visible' : ''}`}
-        aria-label="Scroll to top"
-      >
-        <i className="bi bi-arrow-up"></i>
-      </button>
-
+    <div className={`floating-actions-container ${showScrollTop ? 'has-scroll' : ''}`}>
       {/* WhatsApp Button */}
       <a
         href={whatsappUrl}
@@ -51,6 +42,15 @@ export default function FloatingActions() {
         <span className="pulse-ring"></span>
         <i className="bi bi-whatsapp"></i>
       </a>
+
+      {/* Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`floating-btn scroll-top ${showScrollTop ? 'visible' : ''}`}
+        aria-label="Scroll to top"
+      >
+        <i className="bi bi-arrow-up"></i>
+      </button>
     </div>
   );
 }

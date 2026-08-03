@@ -98,9 +98,12 @@
 
 @media (max-width: 576px) {
   .faq-header {
-    padding: 20px;
+    padding: 16px 20px;
   }
   .faq-answer-box {
-    padding: 20px;
+    padding: 16px 20px;
+  }
+  .faq-question {
+    font-size: 0.95rem;
   }
 }
