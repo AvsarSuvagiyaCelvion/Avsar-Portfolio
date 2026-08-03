@@ -12,7 +12,6 @@ const footerLinks = [
 
 export default function Footer() {
   const scrollTo = href => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-  const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
     <footer className="footer">
@@ -51,7 +50,7 @@ export default function Footer() {
             </div>
 
             {/* Quick Links */}
-            <div className="col-6 col-md-3 col-lg-2">
+            <div className="col-sm-6 col-md-3 col-lg-2 mb-4 mb-sm-0">
               <h4 className="footer-col-title">Quick Links</h4>
               <ul className="footer-nav">
                 {footerLinks.map(link => (
@@ -65,7 +64,7 @@ export default function Footer() {
             </div>
 
             {/* Contact Info */}
-            <div className="col-6 col-md-3 col-lg-3">
+            <div className="col-sm-6 col-md-3 col-lg-3 mb-4 mb-sm-0">
               <h4 className="footer-col-title">Contact Info</h4>
               <ul className="footer-contact-list">
                 <li>
@@ -115,9 +114,6 @@ export default function Footer() {
               <span className="gradient-text">Avsar</span>&nbsp;
                Built with <i className="bi bi-heart-fill" style={{ color: '#ff6b9d', fontSize: '0.75rem' }}></i> using React &amp; Bootstrap.
             </p>
-            <button className="scroll-top-btn" onClick={scrollTop} aria-label="Back to top">
-              <i className="bi bi-arrow-up"></i>
-            </button>
           </div>
         </div>
       </div>

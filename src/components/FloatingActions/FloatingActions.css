@@ -1,0 +1,119 @@
+.floating-actions-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  z-index: 1000;
+  pointer-events: none; /* Let container be click-through, but buttons capture events */
+}
+
+.floating-btn {
+  pointer-events: all;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+/* WhatsApp Styling */
+.floating-btn.whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff;
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.floating-btn.whatsapp:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+}
+
+/* WhatsApp Pulse Ring Animation */
+.pulse-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  opacity: 0;
+  animation: whatsapp-pulse 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Scroll-to-Top Styling */
+.floating-btn.scroll-top {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: #ffffff;
+  font-size: 1.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.85);
+  pointer-events: none;
+}
+
+.floating-btn.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.floating-btn.scroll-top:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.45);
+}
+
+/* Responsive adjustments for mobile and smaller devices */
+@media (max-width: 576px) {
+  .floating-actions-container {
+    bottom: 16px;
+    right: 16px;
+    gap: 10px;
+  }
+
+  .floating-btn {
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .floating-btn.whatsapp {
+    font-size: 1.4rem;
+  }
+
+  .floating-btn.scroll-top {
+    font-size: 1.1rem;
+  }
+
+  /* Make hover scales slightly smaller for mobile fingers */
+  .floating-btn.whatsapp:hover,
+  .floating-btn.scroll-top:hover {
+    transform: translateY(-2px) scale(1.04);
+  }
+}

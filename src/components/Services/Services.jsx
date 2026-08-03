@@ -76,7 +76,7 @@ export default function Services() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="services-cta glass mt-5"
         >
-          <div className="row align-items-center g-4">
+          <div className="row align-items-center g-3 g-sm-4">
             <div className="col-lg-8">
               <h3>Ready to build something amazing?</h3>
               <p>Let's turn your vision into a high-quality, production-ready web product.</p>
