@@ -75,15 +75,15 @@ export const projects = [
   },
   {
     id: 3,
-    title: 'PHP Social Media App',
+    title: 'Rudra Gold',
     description:
-      'A full-featured social platform with real-time messaging, post feeds, friend connections, photo sharing, and notifications — built entirely in PHP with MySQL.',
-    tags: ['PHP', 'MySQL', 'JavaScript', 'CSS3'],
-    category: 'Full Stack',
-    icon: 'bi-people-fill',
-    // gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-    live: '#',
-    features: ['Real-time Chat', 'Post Feed', 'Friend System', 'Notifications'],
+      'A premium Shopify-based e-commerce jewelry store showcasing exquisite jewelry designs with collections, detailed descriptions, custom product pages, and a secure shopping experience.',
+    tags: ['Shopify', 'Liquid', 'HTML', 'CSS', 'JavaScript'],
+    category: 'Shopify',
+    icon: 'bi-gem',
+    gradient: 'linear-gradient(135deg, #bf953f 0%, #aa771c 100%)',
+    live: 'https://rudra-gold-3kqg5mzn.myshopify.com/',
+    features: ['Custom Jewelry Showcase', 'Responsive Design', 'Product Collections', 'Secure Checkout', 'Search & Filter'],
   },
   {
     id: 4,
