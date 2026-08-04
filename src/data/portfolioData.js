@@ -93,7 +93,7 @@ export const projects = [
     tags: ['React', 'Bootstrap'],
     category: 'React',
     icon: 'bi-graph-up-arrow',
-    // gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+    gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
     live: 'https://expense-tracker-khaki-psi-42.vercel.app/',
     features: ['Budget Goals', 'Visual Charts', 'CSV Export', 'Multi-currency'],
   },
@@ -105,7 +105,7 @@ export const projects = [
     tags: ['Shopify', 'Liquid', 'HTML', 'CSS', 'JavaScript'],
     category: 'Shopify',
     icon: 'bi-shop',
-    // gradient: 'linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%)',
+    gradient: 'linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%)',
     live: 'https://therimzimperfume.com',
     features: [
       'Responsive Design',
