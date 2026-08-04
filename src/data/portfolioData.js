@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: 'Avsar Suvagiya',
   title: 'Full Stack Developer',
-  subtitle: 'Building modern web experiences with clean code & creative design',
+  subtitle: 'I build high-performance web applications and custom Shopify stores that scale your business & drive revenue.',
   email: 'avsarsuvagiya968@gmail.com',
   phone: '+91 8320653782',
   location: 'Surat , Gujrat , India',

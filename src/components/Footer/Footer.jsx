@@ -112,7 +112,7 @@ export default function Footer() {
             <p>
               &copy; {new Date().getFullYear()}{' '}
               <span className="gradient-text">Avsar</span>&nbsp;
-               Built with <i className="bi bi-heart-fill" style={{ color: '#ff6b9d', fontSize: '0.75rem' }}></i> using React &amp; Bootstrap.
+               Built with <i className="bi bi-heart-fill" aria-label="love" style={{ color: '#ff6b9d', fontSize: '0.75rem', verticalAlign: 'middle', margin: '0 2px' }}></i> using React &amp; Bootstrap.
             </p>
           </div>
         </div>
