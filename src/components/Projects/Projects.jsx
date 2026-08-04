@@ -6,7 +6,6 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Projects.css';
 
 export default function Projects() {
-  const [hovered, setHovered] = useState(null);
   const [activeCategory, setActiveCategory] = useState('All');
   const titleRef = useScrollReveal();
 
@@ -52,8 +51,6 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="project-card glass"
-                onMouseEnter={() => setHovered(project.id)}
-                onMouseLeave={() => setHovered(null)}
               >
                 {/* Top gradient banner */}
                 <div className="project-banner" style={{ background: project.gradient }}>
