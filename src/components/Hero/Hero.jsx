@@ -97,9 +97,9 @@ export default function Hero() {
             {/* Stats */}
             <motion.div {...fadeUp(0.85)} className="hero-stats mt-5 justify-content-center">
               {[
-                { value: '5+', label: 'Years Experience' },
-                { value: '40+', label: 'Projects Completed' },
-                { value: '30+', label: 'Happy Clients' },
+                { value: '1', label: 'Year Experience' },
+                { value: '5+', label: 'Projects Completed' },
+                { value: '2+', label: 'Happy Clients' },
               ].map(stat => (
                 <div key={stat.label} className="hero-stat">
                   <strong>{stat.value}</strong>

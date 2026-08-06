@@ -5,7 +5,7 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './About.css';
 
 const highlights = [
-  { icon: 'bi-code-slash',          label: 'Clean Code',    value: '5+ yrs',  color: '#6c63ff' },
+  { icon: 'bi-code-slash',          label: 'Clean Code',    value: '1 yr',  color: '#6c63ff' },
   { icon: 'bi-lightning-charge-fill', label: 'Fast Delivery', value: 'Always',  color: '#00d4ff' },
   { icon: 'bi-shield-check-fill',   label: 'Reliable',      value: '100%',    color: '#ff6b9d' },
   { icon: 'bi-headset',             label: '24/7 Support',  value: 'Always',  color: '#ffd166' },

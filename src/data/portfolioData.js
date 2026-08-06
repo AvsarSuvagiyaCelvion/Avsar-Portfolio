@@ -5,7 +5,7 @@ export const personalInfo = {
   email: 'avsarsuvagiya968@gmail.com',
   phone: '+91 8320653782',
   location: 'Surat , Gujrat , India',
-  bio: `I'm a passionate Full Stack Developer with 5+ years of experience crafting scalable,
+  bio: `I'm a passionate Full Stack Developer with 1 year of experience crafting scalable,
   user-centric web applications. I specialize in React, Node.js, PHP, and modern e-commerce
   platforms including Shopify. I love turning complex problems into elegant, performant solutions
   that drive real business value.`,
