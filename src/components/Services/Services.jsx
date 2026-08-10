@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { services } from '../../data/portfolioData';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
@@ -6,12 +7,14 @@ import './Services.css';
 
 export default function Services() {
   const titleRef = useScrollReveal();
+  const [expandedId, setExpandedId] = useState(null);
+
+  const toggleExpand = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
 
   return (
     <section id="services" className="services-section">
-      <div className="orb services-orb-1"></div>
-      <div className="orb services-orb-2"></div>
-
       <div className="container position-relative" style={{ zIndex: 2 }}>
         <div ref={titleRef} className="reveal">
           <SectionTitle
@@ -22,72 +25,93 @@ export default function Services() {
           />
         </div>
 
-        <div className="row g-4">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.id}
-              className="col-md-6 col-xl-3"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <div className="service-card glass h-100">
-                {/* Number */}
-                <span className="service-number">0{service.id}</span>
-
-                {/* Icon */}
+        {/* Services Accordion List */}
+        <div className="services-list-container mt-2">
+          {services.map((service, i) => {
+            const isOpen = expandedId === service.id;
+            return (
+              <motion.div
+                key={service.id}
+                className="service-row-wrap"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {/* Row Header */}
                 <div
-                  className="service-icon-wrap"
-                  style={{
-                    background: `${service.color}18`,
-                    border: `1px solid ${service.color}33`,
-                  }}
+                  className={`service-row-header ${isOpen ? 'active' : ''}`}
+                  onClick={() => toggleExpand(service.id)}
+                  role="button"
+                  aria-expanded={isOpen}
                 >
-                  <i className={`bi ${service.icon}`} style={{ color: service.color }}></i>
+                  <div className="service-row-left">
+                    <span className="service-row-number">0{service.id}</span>
+                    <h3 className="service-row-title">{service.title}</h3>
+                  </div>
+
+                  <div className="service-row-right">
+                    <span className="service-row-tagline d-none d-md-inline-block">
+                      {service.features[0]} &amp; {service.features[1]}
+                    </span>
+                    <div className="service-row-arrow">
+                      <i className={`bi bi-arrow-right`}></i>
+                    </div>
+                  </div>
                 </div>
 
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-desc">{service.description}</p>
-
-                <ul className="service-features">
-                  {service.features.map(f => (
-                    <li key={f}>
-                      <i className="bi bi-arrow-right-short" style={{ color: service.color }}></i>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-
-                <div
-                  className="service-bottom-bar"
-                  style={{ background: `linear-gradient(90deg, ${service.color}, transparent)` }}
-                ></div>
-              </div>
-            </motion.div>
-          ))}
+                {/* Expanded Details */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                      className="service-row-content-wrap"
+                    >
+                      <div className="service-row-body">
+                        <p className="service-row-desc">{service.description}</p>
+                        
+                        <div className="service-row-features-grid mt-3">
+                          <h4 className="features-label">Core Deliverables:</h4>
+                          <ul className="service-row-features-list">
+                            {service.features.map(f => (
+                              <li key={f} className="service-row-feature-item">
+                                <i className="bi bi-shield-check"></i>
+                                <span>{f}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
 
-        {/* CTA Banner */}
+        {/* Flat CTA Banner */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="services-cta glass mt-5"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="services-cta mt-5"
         >
-          <div className="row align-items-center g-3 g-sm-4">
-            <div className="col-lg-8">
-              <h3>Ready to build something amazing?</h3>
-              <p>Let's turn your vision into a high-quality, production-ready web product.</p>
+          <div className="row align-items-center g-4">
+            <div className="col-lg-8 text-start">
+              <h3 className="cta-title">Ready to build something amazing?</h3>
+              <p className="cta-desc">Let's turn your vision into a high-quality, production-ready web product.</p>
             </div>
-            <div className="col-lg-4 text-lg-end">
+            <div className="col-lg-4 text-lg-end text-start">
               <button
                 className="btn-primary-custom"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <i className="bi bi-rocket-takeoff-fill"></i>
-                Start a Project
+                <i className="bi bi-rocket-takeoff-fill"></i> Start a Project
               </button>
             </div>
           </div>

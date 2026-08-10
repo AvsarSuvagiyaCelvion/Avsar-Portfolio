@@ -45,8 +45,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="#home" className="navbar-logo" onClick={e => handleNavClick(e, '#home')}>
-          
-          <span className="gradient-text logo-name">Avsar</span>
+          <span className="logo-name">Avsar<span className="logo-dot">.</span></span>
         </a>
 
         {/* Desktop Links */}

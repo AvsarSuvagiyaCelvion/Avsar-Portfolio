@@ -76,8 +76,9 @@
 
 /* Scroll-to-Top Styling */
 .floating-btn.scroll-top {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  color: #ffffff;
+  background: var(--bg-secondary);
+  border: var(--border-thin);
+  color: var(--text-primary);
   font-size: 1.25rem;
   opacity: 0;
   visibility: hidden;
@@ -93,7 +94,10 @@
 
 .floating-btn.scroll-top:hover {
   transform: translateY(-4px) scale(1.08);
-  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.45);
+  background: var(--color-primary);
+  color: var(--bg-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 25px var(--glass-shadow);
 }
 
 /* Responsive adjustments for mobile and smaller devices */

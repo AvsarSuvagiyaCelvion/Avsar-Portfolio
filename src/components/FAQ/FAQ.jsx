@@ -38,7 +38,7 @@ export default function FAQ() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
               >
                 <div
-                  className={`faq-header glass ${isOpen ? 'active' : ''}`}
+                  className={`faq-header ${isOpen ? 'active' : ''}`}
                   onClick={() => toggleFAQ(i)}
                   role="button"
                   aria-expanded={isOpen}

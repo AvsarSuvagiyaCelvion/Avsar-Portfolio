@@ -89,7 +89,7 @@ export default function Contact() {
 
               <div className="contact-cards">
                 {contactInfo.map(item => (
-                  <a key={item.label} href={item.href} className="contact-card glass">
+                  <a key={item.label} href={item.href} className="contact-card">
                     <div className="contact-card-icon" style={{ background: `${item.color}20`, border: `1px solid ${item.color}40` }}>
                       <i className={`bi ${item.icon}`} style={{ color: item.color }}></i>
                     </div>
@@ -127,7 +127,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="contact-form-wrap glass">
+            <div className="contact-form-wrap">
               <form ref={formRef} onSubmit={handleSubmit} noValidate>
                 <div className="row g-3">
                   <div className="col-sm-6">

@@ -40,7 +40,7 @@ export default function Skills() {
         >
           {skills.map(skill => (
             <motion.div key={skill.category} className="col-sm-6 col-xl-3" variants={cardVariant}>
-              <div className="skill-card glass h-100">
+              <div className="skill-card h-100">
                 <div
                   className="skill-icon-wrap"
                   style={{ background: `${skill.color}22`, border: `1px solid ${skill.color}44` }}
@@ -71,7 +71,7 @@ export default function Skills() {
               { name: 'Shopify / E-commerce', pct: 88, color: '#ffd166' },
             ].map(bar => (
               <div key={bar.name} className="col-md-6">
-                <div className="prof-bar-wrap glass">
+                <div className="prof-bar-wrap">
                   <div className="prof-bar-header">
                     <span>{bar.name}</span>
                     <strong style={{ color: bar.color }}>{bar.pct}%</strong>

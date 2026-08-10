@@ -9,9 +9,6 @@ export default function SectionTitle({ eyebrow, title, highlight, subtitle }) {
         {highlight && <span className="gradient-text">{highlight}</span>}
       </h2>
       {subtitle && <p className="section-subtitle">{subtitle}</p>}
-      <div className="section-divider">
-        <span></span><span></span><span></span>
-      </div>
     </div>
   );
 }

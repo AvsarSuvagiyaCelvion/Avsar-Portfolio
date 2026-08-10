@@ -1,123 +1,212 @@
-.services-section { background: var(--bg-primary); }
-
-.services-orb-1 {
-  width: 400px; height: 400px;
-  background: var(--color-warning);
-  bottom: -100px; right: 100px;
-  opacity: 0.08;
-}
-.services-orb-2 {
-  width: 350px; height: 350px;
-  background: var(--color-secondary);
-  top: 50px; left: -100px;
-  opacity: 0.08;
+.services-section {
+  background: var(--bg-primary);
+  border-bottom: var(--border-thin);
 }
 
-/* Service Card */
-.service-card {
-  padding: 30px 26px 24px;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 60px var(--glass-shadow);
-  border-color: rgba(255, 255, 255, 0.2);
+.services-list-container {
+  border-top: var(--border-thin);
 }
 
-[data-theme='light'] .service-card:hover {
-  border-color: rgba(108, 99, 255, 0.25);
+.service-row-wrap {
+  border-bottom: var(--border-thin);
 }
 
-.service-number {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--glass-border);
-  line-height: 1;
-  opacity: 0.5;
+/* Row Header */
+.service-row-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 20px;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
 }
 
-.service-icon-wrap {
-  width: 60px; height: 60px;
-  border-radius: 16px;
+.service-row-header:hover {
+  background: var(--bg-secondary);
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.service-row-header.active {
+  background: var(--bg-secondary);
+}
+
+/* Header Left: Number & Title */
+.service-row-left {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 36px;
 }
 
-.service-card:hover .service-icon-wrap {
-  transform: scale(1.1) rotate(5deg);
+.service-row-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
 }
 
-.service-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 12px;
+.service-row-header:hover .service-row-number {
+  color: var(--color-accent);
 }
 
-.service-desc {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: 18px;
-}
-
-.service-features {
-  list-style: none;
-  padding: 0;
+.service-row-title {
+  font-size: clamp(1.2rem, 3.5vw, 1.45rem);
+  font-weight: 800;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
-.service-features li {
+
+/* Header Right: Tagline & Arrow */
+.service-row-right {
   display: flex;
   align-items: center;
+  gap: 40px;
+}
+
+.service-row-tagline {
   font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 500;
 }
-.service-features li i { font-size: 1.1rem; margin-right: 4px; }
 
-.service-bottom-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.service-row-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: var(--border-thin);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.service-card:hover .service-bottom-bar { opacity: 1; }
 
-/* CTA */
+.service-row-header:hover .service-row-arrow {
+  background: var(--color-primary);
+  color: var(--bg-primary);
+  border-color: var(--color-primary);
+  transform: translateX(4px);
+}
+
+.service-row-header.active .service-row-arrow {
+  transform: rotate(90deg);
+  background: var(--color-primary);
+  color: var(--bg-primary);
+  border-color: var(--color-primary);
+}
+
+/* Expanded Content Area */
+.service-row-content-wrap {
+  overflow: hidden;
+}
+
+.service-row-body {
+  padding: 10px 20px 36px 92px; /* Offset to align with the title */
+  background: var(--bg-secondary);
+}
+
+.service-row-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+
+/* Features inside Expanded Area */
+.service-row-features-grid {
+  border-top: var(--border-thin);
+  padding-top: 20px;
+  max-width: 720px;
+}
+
+.features-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.service-row-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.service-row-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.service-row-feature-item i {
+  color: #10b981;
+  font-size: 1rem;
+}
+
+/* Flat CTA Banner */
 .services-cta {
-  padding: 40px 44px;
-  border-radius: 20px;
+  background: var(--bg-secondary);
+  border: var(--border-thin);
+  padding: 40px;
+  border-radius: 4px;
 }
-.services-cta h3 {
-  font-size: 1.5rem;
+
+.cta-title {
+  font-size: 1.4rem;
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 8px;
-}
-.services-cta p {
-  color: var(--text-secondary);
-  margin: 0;
-  font-size: 0.95rem;
+  letter-spacing: -0.02em;
 }
 
-@media (max-width: 576px) {
-  .services-cta { padding: 28px 20px; }
+.cta-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.services-cta .btn-primary-custom {
+  border-radius: 4px;
+  padding: 12px 24px;
+}
+
+@media (max-width: 991px) {
+  .service-row-body {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-row-header {
+    padding: 20px 10px;
+  }
+  .service-row-header:hover {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .service-row-left {
+    gap: 18px;
+  }
+  .service-row-body {
+    padding: 5px 10px 24px;
+  }
+  .service-row-features-list {
+    grid-template-columns: 1fr;
+  }
+  .services-cta {
+    padding: 30px 20px;
+  }
 }

@@ -23,11 +23,7 @@ export default function Footer() {
             <div className="col-md-6 col-lg-4">
               <div className="footer-brand">
                 <span className="footer-logo">
-                  <span className="footer-logo-icon">
-                    <i className="bi bi-code-slash"></i>
-                  </span>
-                  <span className="gradient-text">Avsar</span>
-                  <span className="footer-logo-dot">.</span>
+                  Avsar<span className="logo-dot">.</span>
                 </span>
                 <p className="footer-tagline">
                   Building modern, scalable web experiences with clean code and creative design.
@@ -106,17 +102,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <div className="container">
-          <div className="footer-bottom-inner">
-            <p>
-              &copy; {new Date().getFullYear()}{' '}
-              <span className="gradient-text">Avsar</span>&nbsp;
-               Built with <i className="bi bi-heart-fill" aria-label="love" style={{ color: '#ff6b9d', fontSize: '0.75rem', verticalAlign: 'middle', margin: '0 2px' }}></i> using React &amp; Bootstrap.
-            </p>
-          </div>
-        </div>
-      </div>
+      
     </footer>
   );
 }

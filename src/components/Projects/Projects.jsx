@@ -50,10 +50,10 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="project-card glass"
+                className="project-card"
               >
                 {/* Top gradient banner */}
-                <div className="project-banner" style={{ background: project.gradient }}>
+                <div className="project-banner">
                   <div className="project-icon-wrap">
                     <i className={`bi ${project.icon}`}></i>
                   </div>

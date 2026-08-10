@@ -39,7 +39,7 @@ export default function About() {
           <div className="row g-5 align-items-start mb-5">
             {/* Bio */}
             <div className="col-lg-7">
-              <div className="about-bio-card glass">
+              <div className="about-bio-card">
                 <h3 className="about-greeting">
                   Full Stack Developer &amp;{' '}
                   <span className="gradient-text">Creative Problem Solver</span>
@@ -72,7 +72,7 @@ export default function About() {
 
             {/* Info grid */}
             <div className="col-lg-5">
-              <div className="about-info-card glass">
+              <div className="about-info-card">
                 <h4 className="info-card-title">Personal Info</h4>
                 <div className="about-info-grid">
                   {infoItems.map(item => (
@@ -108,7 +108,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <div className="highlight-card glass">
+                <div className="highlight-card">
                   <div
                     className="highlight-icon"
                     style={{ background: `${h.color}18`, border: `1px solid ${h.color}33` }}
