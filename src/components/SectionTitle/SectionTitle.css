@@ -2,6 +2,12 @@
   margin-bottom: 4rem;
 }
 
+@media (max-width: 768px) {
+  .section-title {
+    margin-bottom: 2.5rem;
+  }
+}
+
 .section-eyebrow {
   display: inline-block;
   font-size: 0.72rem;

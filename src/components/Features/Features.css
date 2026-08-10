@@ -54,3 +54,10 @@
   line-height: 1.65;
   margin: 0;
 }
+
+@media (max-width: 767px) {
+  .feature-card {
+    align-items: center;
+    text-align: center;
+  }
+}

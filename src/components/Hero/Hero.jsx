@@ -47,9 +47,9 @@ export default function Hero() {
         <div className="row min-vh-100 align-content-center py-5">
           
           {/* Main Massive Title Block */}
-          <div className="col-12 text-start">
+          <div className="col-12 text-center text-lg-start">
             {/* Availability badge */}
-            <motion.div {...fadeUp(0.1)} className="d-flex justify-content-start mb-3">
+            <motion.div {...fadeUp(0.1)} className="d-flex justify-content-center justify-content-lg-start mb-3">
               <span className="hero-badge">
                 <span className="badge-dot"></span>
                 Available for freelance &amp; custom contract roles
@@ -75,12 +75,12 @@ export default function Hero() {
             <div className="row g-4 align-items-start">
               
               {/* Left Column: Intro Bio & CTAs */}
-              <div className="col-lg-7 pe-lg-5 text-start">
-                <motion.p {...fadeUp(0.35)} className="hero-subtitle">
+              <div className="col-lg-7 pe-lg-5 text-center text-lg-start">
+                <motion.p {...fadeUp(0.35)} className="hero-subtitle mx-auto mx-lg-0">
                   {personalInfo.subtitle}
                 </motion.p>
 
-                <motion.div {...fadeUp(0.45)} className="hero-cta d-flex flex-wrap gap-3 mt-4">
+                <motion.div {...fadeUp(0.45)} className="hero-cta d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mt-4">
                   <button className="btn-primary-custom" onClick={() => scrollTo('projects')}>
                     <i className="bi bi-grid-3x3-gap-fill"></i> View My Work
                   </button>
@@ -94,7 +94,7 @@ export default function Hero() {
               </div>
 
               {/* Right Column: Tech tags and Stats */}
-              <div className="col-lg-5 ps-lg-5 border-start-desktop text-start">
+              <div className="col-lg-5 ps-lg-5 border-start-desktop text-center text-lg-start mt-4 mt-lg-0">
                 <motion.div {...fadeUp(0.4)} className="hero-right-panel">
                   <h4 className="hero-panel-title">Core Technologies</h4>
                   <div className="hero-tech-stack mt-3 mb-4">

@@ -204,4 +204,7 @@
   .projects-grid {
     grid-template-columns: 1fr;
   }
+  .portfolio-filters {
+    margin-bottom: 24px;
+  }
 }

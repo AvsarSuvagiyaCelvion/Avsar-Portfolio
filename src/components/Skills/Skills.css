@@ -113,6 +113,17 @@
   .skill-card {
     padding: 28px 20px;
   }
+  .skill-card-content-wrap {
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .skill-item {
+    justify-content: flex-start;
+  }
   .prof-bar-wrap {
     padding: 20px;
   }

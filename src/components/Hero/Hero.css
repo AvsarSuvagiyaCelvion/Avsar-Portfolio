@@ -191,12 +191,29 @@
     padding-bottom: 60px;
   }
   
+  .hero-panel-title {
+    text-align: center;
+  }
+  
+  .hero-tech-stack {
+    justify-content: center;
+  }
+  
   .hero-stats {
     margin-top: 30px;
   }
 }
 
 @media (max-width: 576px) {
+  .hero-title {
+    font-size: clamp(1.75rem, 8.5vw, 3.2rem);
+    letter-spacing: -0.03em;
+  }
+  
+  .typewriter-name {
+    font-size: clamp(1.5rem, 7.5vw, 2.4rem);
+  }
+  
   .hero-cta {
     flex-direction: column;
     width: 100%;

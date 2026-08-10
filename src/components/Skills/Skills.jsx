@@ -41,21 +41,23 @@ export default function Skills() {
           {skills.map(skill => (
             <motion.div key={skill.category} className="col-sm-6 col-xl-3" variants={cardVariant}>
               <div className="skill-card h-100">
-                <div
-                  className="skill-icon-wrap"
-                  style={{ background: `${skill.color}22`, border: `1px solid ${skill.color}44` }}
-                >
-                  <i className={`bi ${skill.icon}`} style={{ color: skill.color }}></i>
+                <div className="skill-card-content-wrap">
+                  <div
+                    className="skill-icon-wrap"
+                    style={{ background: `${skill.color}22`, border: `1px solid ${skill.color}44` }}
+                  >
+                    <i className={`bi ${skill.icon}`} style={{ color: skill.color }}></i>
+                  </div>
+                  <h4 className="skill-category">{skill.category}</h4>
+                  <ul className="skill-list">
+                    {skill.items.map(item => (
+                      <li key={item} className="skill-item">
+                        <span className="skill-dot" style={{ background: skill.color }}></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h4 className="skill-category">{skill.category}</h4>
-                <ul className="skill-list">
-                  {skill.items.map(item => (
-                    <li key={item} className="skill-item">
-                      <span className="skill-dot" style={{ background: skill.color }}></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
             </motion.div>
           ))}
