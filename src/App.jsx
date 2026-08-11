@@ -1,3 +1,4 @@
+import { motion, useScroll } from 'framer-motion';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
@@ -13,9 +14,17 @@ import FloatingActions from './components/FloatingActions/FloatingActions';
 import './App.css';
 
 export default function App() {
+  const { scrollYProgress } = useScroll();
+
   return (
     <ThemeProvider>
       <div className="app-wrapper">
+        {/* Top Scroll Progress Indicator */}
+        <motion.div
+          className="scroll-progress-bar"
+          style={{ scaleX: scrollYProgress }}
+        />
+        
         <Navbar />
         <main>
           <Hero />

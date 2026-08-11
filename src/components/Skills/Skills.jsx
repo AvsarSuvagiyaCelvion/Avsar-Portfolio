@@ -1,35 +1,37 @@
 import { motion } from 'framer-motion';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { skills } from '../../data/portfolioData';
-import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Skills.css';
 
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.12 } },
+  show: { transition: { staggerChildren: 0.18 } },
 };
 const cardVariant = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  hidden: { opacity: 0, y: 65, filter: 'blur(4px)' },
+  show: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
 };
 
 export default function Skills() {
-  const titleRef = useScrollReveal();
-
   return (
     <section id="skills" className="skills-section">
       <div className="orb skills-orb-1"></div>
       <div className="orb skills-orb-2"></div>
 
       <div className="container position-relative" style={{ zIndex: 2 }}>
-        <div ref={titleRef} className="reveal">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
           <SectionTitle
             eyebrow="What I Know"
             title="My Tech"
             highlight="Stack"
             subtitle="Technologies and tools I use to build modern, scalable applications."
           />
-        </div>
+        </motion.div>
 
         <motion.div
           className="row g-4"
@@ -40,7 +42,7 @@ export default function Skills() {
         >
           {skills.map(skill => (
             <motion.div key={skill.category} className="col-sm-6 col-xl-3" variants={cardVariant}>
-              <div className="skill-card h-100">
+              <div className="skill-card h-100" data-cursor="hover">
                 <div className="skill-card-content-wrap">
                   <div
                     className="skill-icon-wrap"
@@ -73,7 +75,7 @@ export default function Skills() {
               { name: 'Shopify / E-commerce', pct: 88, color: '#ffd166' },
             ].map(bar => (
               <div key={bar.name} className="col-md-6">
-                <div className="prof-bar-wrap">
+                <div className="prof-bar-wrap" data-cursor="hover">
                   <div className="prof-bar-header">
                     <span>{bar.name}</span>
                     <strong style={{ color: bar.color }}>{bar.pct}%</strong>

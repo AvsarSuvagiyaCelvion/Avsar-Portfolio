@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { personalInfo } from '../../data/portfolioData';
-import { useScrollReveal } from '../../hooks/useScrollReveal';
+import MagneticButton from '../MagneticButton/MagneticButton';
 import './Contact.css';
 
 const SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || 'YOUR_SERVICE_ID';
@@ -18,7 +18,6 @@ const contactInfo = [
 
 export default function Contact() {
   const formRef = useRef(null);
-  const titleRef = useScrollReveal();
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
   const [errors, setErrors] = useState({});
 
@@ -60,14 +59,19 @@ export default function Contact() {
       <div className="orb contact-orb-2"></div>
 
       <div className="container position-relative" style={{ zIndex: 2 }}>
-        <div ref={titleRef} className="reveal">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
           <SectionTitle
             eyebrow="Get In Touch"
             title="Contact"
             highlight="Me"
             subtitle="Have a project in mind? Let's discuss how I can help bring your ideas to life."
           />
-        </div>
+        </motion.div>
 
         <div className="row g-5 align-items-start">
           {/* Info Column */}
@@ -89,7 +93,7 @@ export default function Contact() {
 
               <div className="contact-cards">
                 {contactInfo.map(item => (
-                  <a key={item.label} href={item.href} className="contact-card">
+                  <a key={item.label} href={item.href} className="contact-card" data-cursor="hover">
                     <div className="contact-card-icon" style={{ background: `${item.color}20`, border: `1px solid ${item.color}40` }}>
                       <i className={`bi ${item.icon}`} style={{ color: item.color }}></i>
                     </div>
@@ -104,16 +108,18 @@ export default function Contact() {
               {/* Social links */}
               <div className="contact-socials mt-4">
                 {Object.entries(personalInfo.socials).map(([key, url]) => (
-                  <a
-                    key={key}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-link"
-                    aria-label={key}
-                  >
-                    <i className={`bi bi-${key}`}></i>
-                  </a>
+                  <MagneticButton key={key}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-link"
+                      aria-label={key}
+                      data-cursor="hover"
+                    >
+                      <i className={`bi bi-${key}`}></i>
+                    </a>
+                  </MagneticButton>
                 ))}
               </div>
             </div>
@@ -137,6 +143,7 @@ export default function Contact() {
                       name="user_name"
                       className={`input-custom ${errors.user_name ? 'input-error' : ''}`}
                       placeholder="John Doe"
+                      data-cursor="hover"
                     />
                     {errors.user_name && <span className="error-msg">{errors.user_name}</span>}
                   </div>
@@ -148,6 +155,7 @@ export default function Contact() {
                       name="user_email"
                       className={`input-custom ${errors.user_email ? 'input-error' : ''}`}
                       placeholder="john@example.com"
+                      data-cursor="hover"
                     />
                     {errors.user_email && <span className="error-msg">{errors.user_email}</span>}
                   </div>
@@ -159,6 +167,7 @@ export default function Contact() {
                       name="subject"
                       className={`input-custom ${errors.subject ? 'input-error' : ''}`}
                       placeholder="Project Inquiry"
+                      data-cursor="hover"
                     />
                     {errors.subject && <span className="error-msg">{errors.subject}</span>}
                   </div>
@@ -170,22 +179,26 @@ export default function Contact() {
                       rows={6}
                       className={`input-custom ${errors.message ? 'input-error' : ''}`}
                       placeholder="Tell me about your project..."
+                      data-cursor="hover"
                     />
                     {errors.message && <span className="error-msg">{errors.message}</span>}
                   </div>
 
                   <div className="col-12">
-                    <button
-                      type="submit"
-                      className="btn-primary-custom w-100 justify-content-center"
-                      disabled={status === 'sending'}
-                    >
-                      {status === 'sending' ? (
-                        <><span className="spinner-border spinner-border-sm me-2"></span>Sending...</>
-                      ) : (
-                        <><i className="bi bi-send-fill"></i>Send Message</>
-                      )}
-                    </button>
+                    <MagneticButton className="w-100">
+                      <button
+                        type="submit"
+                        className="btn-primary-custom w-100 justify-content-center"
+                        disabled={status === 'sending'}
+                        data-cursor="hover"
+                      >
+                        {status === 'sending' ? (
+                          <><span className="spinner-border spinner-border-sm me-2"></span>Sending...</>
+                        ) : (
+                          <><i className="bi bi-send-fill"></i> Send Message</>
+                        )}
+                      </button>
+                    </MagneticButton>
                   </div>
 
                   {status === 'success' && (

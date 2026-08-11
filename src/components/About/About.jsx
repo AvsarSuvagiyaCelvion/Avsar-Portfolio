@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { personalInfo } from '../../data/portfolioData';
-import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './About.css';
 
 const highlights = [
@@ -19,86 +18,96 @@ const infoItems = [
 ];
 
 export default function About() {
-  const ref = useScrollReveal();
-
   return (
     <section id="about" className="about-section">
       <div className="orb about-orb-1"></div>
       <div className="orb about-orb-2"></div>
 
       <div className="container position-relative" style={{ zIndex: 2 }}>
-        <SectionTitle
-          eyebrow="Who I Am"
-          title="About"
-          highlight="Me"
-          subtitle="Passionate developer dedicated to crafting exceptional digital experiences."
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <SectionTitle
+            eyebrow="Who I Am"
+            title="About"
+            highlight="Me"
+            subtitle="Passionate developer dedicated to crafting exceptional digital experiences."
+          />
+        </motion.div>
 
         {/* Bio + Info row */}
-        <div ref={ref} className="reveal">
-          <div className="row g-5 align-items-start mb-5">
-            {/* Bio */}
-            <div className="col-lg-7">
-              <div className="about-bio-card">
-                <h3 className="about-greeting">
-                  Full Stack Developer &amp;{' '}
-                  <span className="gradient-text">Creative Problem Solver</span>
-                </h3>
-                <p className="about-bio">{personalInfo.bio}</p>
-                <p className="about-bio mb-0">{personalInfo.bioExtra}</p>
+        <div className="row g-5 align-items-start mb-5">
+          {/* Bio */}
+          <motion.div
+            className="col-lg-7"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="about-bio-card">
+              <h3 className="about-greeting">
+                Full Stack Developer &amp;{' '}
+                <span className="gradient-text">Creative Problem Solver</span>
+              </h3>
+              <p className="about-bio">{personalInfo.bio}</p>
+              <p className="about-bio mb-0">{personalInfo.bioExtra}</p>
 
-                <div className="about-socials mt-4">
-                  {Object.entries(personalInfo.socials).map(([key, url]) => (
-                    <a
-                      key={key}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social-btn"
-                      aria-label={key}
-                    >
-                      <i className={`bi bi-${key}`}></i>
-                    </a>
-                  ))}
-                </div>
-
-                <div className="mt-4">
-                  <a href="./resume.pdf" className="btn-primary-custom" download>
-                    <i className="bi bi-download"></i> Download Resume
+              <div className="about-socials mt-4">
+                {Object.entries(personalInfo.socials).map(([key, url]) => (
+                  <a
+                    key={key}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-btn"
+                    aria-label={key}
+                  >
+                    <i className={`bi bi-${key}`}></i>
                   </a>
-                </div>
+                ))}
+              </div>
+
+              <div className="mt-4">
+                <a href="./resume.pdf" className="btn-primary-custom" download>
+                  <i className="bi bi-download"></i> Download Resume
+                </a>
               </div>
             </div>
+          </motion.div>
 
-            {/* Info grid */}
-            <div className="col-lg-5">
-              <div className="about-info-card">
-                <h4 className="info-card-title">Personal Info</h4>
-                <div className="about-info-grid">
-                  {infoItems.map(item => (
-                    <div key={item.label} className="info-row">
-                      <span className="info-icon">
-                        <i className={`bi ${item.icon}`}></i>
-                      </span>
-                      <div>
-                        <small>{item.label}</small>
-                        <strong>{item.value}</strong>
-                      </div>
+          {/* Info grid */}
+          <motion.div
+            className="col-lg-5"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <div className="about-info-card">
+              <h4 className="info-card-title">Personal Info</h4>
+              <div className="about-info-grid">
+                {infoItems.map(item => (
+                  <div key={item.label} className="info-row">
+                    <span className="info-icon">
+                      <i className={`bi ${item.icon}`}></i>
+                    </span>
+                    <div>
+                      <small>{item.label}</small>
+                      <strong>{item.value}</strong>
                     </div>
-                  ))}
-                </div>
-
-                {/* Availability */}
-                {/* <div className="avail-tag mt-4">
-                  <span className="avail-dot"></span>
-                  Currently available for new projects
-                </div> */}
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
+          </motion.div>
+        </div>
 
-          {/* Highlight cards */}
-          <div className="row g-3">
+        {/* Highlight cards */}
+        <div className="row g-3">
             {highlights.map((h, i) => (
               <motion.div
                 key={h.label}
@@ -123,7 +132,6 @@ export default function About() {
               </motion.div>
             ))}
           </div>
-        </div>
       </div>
     </section>
   );

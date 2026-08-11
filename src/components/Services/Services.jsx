@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import { services } from '../../data/portfolioData';
-import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Services.css';
 
 export default function Services() {
-  const titleRef = useScrollReveal();
   const [expandedId, setExpandedId] = useState(null);
 
   const toggleExpand = (id) => {
@@ -16,14 +14,19 @@ export default function Services() {
   return (
     <section id="services" className="services-section">
       <div className="container position-relative" style={{ zIndex: 2 }}>
-        <div ref={titleRef} className="reveal">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
           <SectionTitle
             eyebrow="What I Offer"
             title="My"
             highlight="Services"
             subtitle="From concept to deployment, I provide end-to-end web development services."
           />
-        </div>
+        </motion.div>
 
         {/* Services Accordion List */}
         <div className="services-list-container mt-2">
@@ -33,10 +36,10 @@ export default function Services() {
               <motion.div
                 key={service.id}
                 className="service-row-wrap"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 55, filter: 'blur(3px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.8, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
               >
                 {/* Row Header */}
                 <div
