@@ -115,7 +115,27 @@ export const projects = [
       'Search & Filter',
       'Mobile Friendly',
     ],
-  }
+  },
+  {
+    id: 6,
+    title: 'Power House Gym',
+    description:
+      'A modern, fully responsive, animation-rich frontend web application for Power House Gym in Jetpur. Features specialized programs for Men, Women & Kids, interactive class booking modals, animated stat counters, monthly/yearly membership price toggle, category-filtered photo gallery with Lightbox, and live location details.',
+    tags: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'React Router'],
+    category: 'React',
+    icon: 'bi-lightning-charge-fill',
+    gradient: 'linear-gradient(135deg, #FF3E00 0%, #FF7A00 50%, #CCFF00 100%)',
+    github: 'https://github.com/AvsarSuvagiyaCelvion/Gym_portfolio',
+    live: 'https://powerhousegym-seven.vercel.app/',
+    features: [
+      'Men, Women & Kids Batches',
+      'Interactive Class Modals',
+      'Framer Motion Animations',
+      'Membership Price Switcher',
+      'Category Photo Gallery',
+      'Responsive Design',
+    ],
+  },
 ];
 
 export const services = [
